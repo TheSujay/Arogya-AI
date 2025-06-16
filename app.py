@@ -6,7 +6,7 @@ import re
 import traceback
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=["http://localhost:5173", "http://127.0.0.1:5173"])
+CORS(app, supports_credentials=True, origins=["http://localhost:5173", "https://arogyaforall.netlify.app"])
 
 # === Static knowledge base for auto-suggestions ===
 medical_knowledge = {
