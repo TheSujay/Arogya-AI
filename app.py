@@ -5,6 +5,10 @@ import os
 import re
 import traceback
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=["http://localhost:5173", "https://arogyaforall.netlify.app"])
 
@@ -29,10 +33,10 @@ medical_knowledge = {
 }
 
 # === API Keys and Endpoints ===
-GROQ_API_KEY = "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"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_MODEL = "llama3-8b-8192"
 
-GEMINI_API_KEY = "AIzaSyBi2VKPUmq9RQsOrZe5HN-DCZvPXDWTZig"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
 
 # === Utility: Parse LLM Output into JSON ===
